@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080">
+  <defs>
+    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.10"/>
+    </filter>
+    <marker id="arrow" markerWidth="14" markerHeight="10" refX="11" refY="5" orient="auto">
+      <path d="M0,0 L12,5 L0,10 Z" fill="#26313c"/>
+    </marker>
+    <style>
+      .frame { fill: #ffffff; stroke: #26313c; stroke-width: 1.8; filter: url(#softShadow); }
+      .panel { fill: #fbfcfd; stroke: #41505f; stroke-width: 1.1; }
+      .heading { font: 700 18px 'Segoe UI', Arial, sans-serif; fill: #1a2530; }
+      .subhead { font: 400 13px 'Segoe UI', Arial, sans-serif; fill: #5a6774; }
+      .body { font: 600 14px 'Segoe UI', Arial, sans-serif; fill: #1e2933; }
+      .note { font: 400 12px 'Segoe UI', Arial, sans-serif; fill: #334155; }
+      .arrow { stroke: #26313c; stroke-width: 2.3; fill: none; marker-end: url(#arrow); }
+    </style>
+  </defs>
+
+  <rect width="1920" height="1080" fill="#ffffff"/>
+
+  <rect class="frame" x="70" y="325" rx="10" ry="10" width="250" height="250"/>
+  <text x="195" y="363" text-anchor="middle" class="heading">Player Input</text>
+  <text x="195" y="385" text-anchor="middle" class="subhead">How the game receives commands</text>
+  <rect class="panel" x="95" y="415" rx="7" ry="7" width="200" height="72"/>
+  <text x="195" y="443" text-anchor="middle" class="body">Arrow keys</text>
+  <text x="195" y="464" text-anchor="middle" class="note">Move Pac-Man through the maze</text>
+  <rect class="panel" x="95" y="503" rx="7" ry="7" width="200" height="58"/>
+  <text x="195" y="529" text-anchor="middle" class="body">Control keys</text>
+  <text x="195" y="548" text-anchor="middle" class="note">Start, restart, and exit</text>
+
+  <rect class="frame" x="385" y="360" rx="10" ry="10" width="255" height="175"/>
+  <text x="512" y="398" text-anchor="middle" class="heading">Input Processing</text>
+  <text x="512" y="420" text-anchor="middle" class="subhead">Interprets key presses from GLUT</text>
+  <rect class="panel" x="412" y="447" rx="7" ry="7" width="201" height="78"/>
+  <text x="512" y="476" text-anchor="middle" class="body">Queues the next turn</text>
+  <text x="512" y="498" text-anchor="middle" class="note">Helps turns feel responsive</text>
+  <text x="512" y="515" text-anchor="middle" class="note">when Pac-Man reaches a tile center</text>
+
+  <rect class="frame" x="730" y="215" rx="10" ry="10" width="390" height="455"/>
+  <text x="925" y="253" text-anchor="middle" class="heading">Core Game Logic</text>
+  <text x="925" y="275" text-anchor="middle" class="subhead">Keeps the play session consistent and fair</text>
+  <rect class="panel" x="760" y="305" rx="7" ry="7" width="330" height="74"/>
+  <text x="925" y="334" text-anchor="middle" class="body">Player movement and tile snapping</text>
+  <text x="925" y="356" text-anchor="middle" class="note">Handles clean turns, smooth travel,</text>
+  <text x="925" y="373" text-anchor="middle" class="note">and wrap-around tunnel movement</text>
+  <rect class="panel" x="760" y="395" rx="7" ry="7" width="330" height="74"/>
+  <text x="925" y="424" text-anchor="middle" class="body">Pellet and power pellet handling</text>
+  <text x="925" y="446" text-anchor="middle" class="note">Updates score and activates</text>
+  <text x="925" y="463" text-anchor="middle" class="note">frightened ghost behaviour</text>
+  <rect class="panel" x="760" y="485" rx="7" ry="7" width="330" height="74"/>
+  <text x="925" y="514" text-anchor="middle" class="body">Collision and life tracking</text>
+  <text x="925" y="536" text-anchor="middle" class="note">Checks contact with ghosts</text>
+  <text x="925" y="553" text-anchor="middle" class="note">and applies the right outcome</text>
+  <rect class="panel" x="760" y="575" rx="7" ry="7" width="330" height="78"/>
+  <text x="925" y="604" text-anchor="middle" class="body">Game flow management</text>
+  <text x="925" y="626" text-anchor="middle" class="note">Controls menu, ready state, gameplay,</text>
+  <text x="925" y="643" text-anchor="middle" class="note">win state, and game over</text>
+
+  <rect class="frame" x="1210" y="235" rx="10" ry="10" width="300" height="405"/>
+  <text x="1360" y="273" text-anchor="middle" class="heading">Ghost AI and Updates</text>
+  <text x="1360" y="295" text-anchor="middle" class="subhead">Handles enemy decisions every frame</text>
+  <rect class="panel" x="1240" y="325" rx="7" ry="7" width="240" height="80"/>
+  <text x="1360" y="354" text-anchor="middle" class="body">Target selection</text>
+  <text x="1360" y="376" text-anchor="middle" class="note">Each ghost uses its own</text>
+  <text x="1360" y="393" text-anchor="middle" class="note">chasing pattern inside the maze</text>
+  <rect class="panel" x="1240" y="421" rx="7" ry="7" width="240" height="76"/>
+  <text x="1360" y="450" text-anchor="middle" class="body">Mode switching</text>
+  <text x="1360" y="472" text-anchor="middle" class="note">Moves between scatter, chase,</text>
+  <text x="1360" y="489" text-anchor="middle" class="note">frightened, and eaten states</text>
+  <rect class="panel" x="1240" y="513" rx="7" ry="7" width="240" height="102"/>
+  <text x="1360" y="542" text-anchor="middle" class="body">Movement and respawn updates</text>
+  <text x="1360" y="564" text-anchor="middle" class="note">Leaves the house, returns after being eaten,</text>
+  <text x="1360" y="581" text-anchor="middle" class="note">and then re-enters active play</text>
+
+  <rect class="frame" x="1620" y="215" rx="10" ry="10" width="240" height="425"/>
+  <text x="1740" y="253" text-anchor="middle" class="heading">Rendering with OpenGL</text>
+  <text x="1740" y="275" text-anchor="middle" class="subhead">Draws the scene in real time</text>
+  <rect class="panel" x="1646" y="307" rx="7" ry="7" width="188" height="72"/>
+  <text x="1740" y="335" text-anchor="middle" class="body">Maze drawing</text>
+  <text x="1740" y="356" text-anchor="middle" class="note">Walls, gate, and tunnel corridor</text>
+  <rect class="panel" x="1646" y="395" rx="7" ry="7" width="188" height="80"/>
+  <text x="1740" y="424" text-anchor="middle" class="body">Character drawing</text>
+  <text x="1740" y="446" text-anchor="middle" class="note">Pac-Man, ghosts, and</text>
+  <text x="1740" y="463" text-anchor="middle" class="note">frightened-mode visuals</text>
+  <rect class="panel" x="1646" y="491" rx="7" ry="7" width="188" height="76"/>
+  <text x="1740" y="520" text-anchor="middle" class="body">HUD and feedback</text>
+  <text x="1740" y="542" text-anchor="middle" class="note">Score, lives, and</text>
+  <text x="1740" y="559" text-anchor="middle" class="note">game-state messages</text>
+  <rect class="panel" x="1646" y="583" rx="7" ry="7" width="188" height="38"/>
+  <text x="1740" y="607" text-anchor="middle" class="body">Frame refresh</text>
+
+  <rect class="frame" x="1185" y="760" rx="10" ry="10" width="330" height="120"/>
+  <text x="1350" y="800" text-anchor="middle" class="heading">Timer Loop</text>
+  <text x="1350" y="825" text-anchor="middle" class="note">The GLUT timer keeps the updates steady</text>
+  <text x="1350" y="844" text-anchor="middle" class="note">so game logic and animation stay in sync.</text>
+
+  <rect class="frame" x="1620" y="735" rx="10" ry="10" width="240" height="145"/>
+  <text x="1740" y="775" text-anchor="middle" class="heading">Supporting Helpers</text>
+  <rect class="panel" x="1646" y="800" rx="7" ry="7" width="188" height="58"/>
+  <text x="1740" y="825" text-anchor="middle" class="note">Tile mapping, collision checks,</text>
+  <text x="1740" y="844" text-anchor="middle" class="note">and basic drawing helpers</text>
+
+  <rect class="frame" x="1600" y="940" rx="10" ry="10" width="280" height="56"/>
+  <text x="1740" y="974" text-anchor="middle" class="body">Interactive FreeGLUT output window</text>
+
+  <line class="arrow" x1="320" y1="450" x2="385" y2="450"/>
+  <line class="arrow" x1="640" y1="450" x2="730" y2="450"/>
+  <line class="arrow" x1="1120" y1="450" x2="1210" y2="450"/>
+  <line class="arrow" x1="1510" y1="450" x2="1620" y2="450"/>
+  <line class="arrow" x1="1350" y1="760" x2="1350" y2="640"/>
+  <line class="arrow" x1="1515" y1="820" x2="1620" y2="820"/>
+  <line class="arrow" x1="1740" y1="640" x2="1740" y2="735"/>
+  <line class="arrow" x1="1740" y1="880" x2="1740" y2="940"/>
+</svg>
